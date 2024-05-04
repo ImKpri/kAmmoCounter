@@ -21,9 +21,9 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
         local playerPed = PlayerPedId()
 
-        if IsPedArmed(playerPed, 6) then -- Check if the player is holding a weapon
+        if IsPedArmed(playerPed, 6) then
             if not IsPlayerFreeAiming(PlayerId()) then
-                local boneIndex = GetPedBoneIndex(playerPed, 57005) -- Right Hand bone
+                local boneIndex = GetPedBoneIndex(playerPed, 57005)
                 local coords = GetWorldPositionOfEntityBone(playerPed, boneIndex)
                 local _, _, z = table.unpack(coords)
                 local ammoInClip, ammoInClipMax = GetAmmoInClip(playerPed, GetSelectedPedWeapon(playerPed))
